@@ -1,0 +1,170 @@
+*{
+    margin: 0; padding: 0; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    display: flex; justify-content: space-around; align-items: center; flex-direction: column;
+    background-color: var(--background_main);
+} 
+:root{
+    --background_main:rgb(227, 253, 253);
+    --background_box:rgb(93, 243, 243);
+}
+.container_main_box{
+    width: 50%; height: 50vh;
+    margin: 10rem 0;
+    background-color: var(--background_box);
+    border-radius: 2rem;
+    box-shadow: 0px 0px 33px 5px #888888;
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
+    position: relative;
+    padding: 1rem;
+}
+.container_main_box::after{
+    content: "";
+    width: 1rem; height: 1rem;
+    border-radius: 50%;
+    background-color: gray;
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    animation: animation_point_container_main 4s ease infinite;
+}
+
+
+
+.container_main_box h1{
+    margin-bottom: 1rem;
+}
+.container_main_box p{
+    line-height: 1.9rem;
+}
+
+
+.test_box_image_theme{
+    width: 90%; height: 90vh;
+    margin: 10rem;
+    border-radius: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--background_box);
+}
+.container_box_image{
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1rem;
+    width: 20rem; height: 15rem;
+}
+.container_box_image img{
+    width: 100%; height: 100%;
+}
+
+.container_icon_sucialMedia{
+    height: 50vh;
+    display: flex;justify-content:space-around; align-items: center; 
+}
+.container_icon_sucialMedia i{
+    font-size: 5rem;
+    cursor: pointer;
+    color: #fff;
+    animation: first_color 1s ease-in-out infinite alternate;
+    margin: 0 4rem;
+    
+}
+.container_icon_sucialMedia i:nth-child(2){
+    animation-name: second_color;
+    animation-delay: .4s;
+}
+.container_icon_sucialMedia i:nth-child(3){
+
+    animation-name: thired_color;
+}
+@keyframes first_color {
+    0%{
+        text-shadow:  0 0 10px #ff1177, 0 0 20px #d6349f, 0 0 30px #285AEb;
+    }100%{
+        text-shadow:  0 0 5px #ff1177, 0 0 10px #d6349f, 0 0 15px #285AEb;
+    }
+}
+
+@keyframes second_color{
+    0%{
+        text-shadow:  0 0 10px #1877f2, 0 0 20px #1459b3, 0 0 30px #179bff;
+    }100%{
+        text-shadow:  0 0 5px #1877f2, 0 0 10px #1459b3, 0 0 15px #179bff;
+    }
+}
+
+@keyframes thired_color{
+    0%{
+        text-shadow:  0 0 10px #25d366, 0 0 20px #48ee85, 0 0 30px #0e0 ;
+    }100%{
+        text-shadow:  0 0 5px #25d366, 0 0 10px #48ee85, 0 0 15px #0e0;
+    }
+}
+
+
+
+/* Toggle bar */
+.container_toggle_button{
+    position: fixed;
+    width: 10rem; height: 5rem;
+    top: 2rem;
+    right: 2rem;
+}
+#Toggle{
+    display: none;
+}
+.box_toggle_bar{
+    width: 7rem; height: 2.5rem;
+    position: absolute;
+    border-radius: 9999px;
+    right: 2rem;
+    cursor: pointer;
+}
+.box_toggle_bar::after{
+    content: url(../iamge/icon/icons8-sun-40.png);
+    border-radius: 50%;
+    position: absolute;
+    top:0;
+    left: .5rem;
+    transition: all .6s ;
+}
+#Toggle:checked+ .box_toggle_bar::after{
+    transform: translateY(-20px);
+    content: url(../iamge/icon/icons8-moon-64.png);
+}
+
+.change_theme{
+    background-color: rgb(177, 176, 176) !important; 
+    color: #fff;
+    box-shadow: 1px 1px 22px 5px #f2edd8, 1px 1px 22px 10px #f3e9c2;
+}
+
+
+/* moving_backgorund */
+.moving_background{
+    padding: 2rem 0;
+    background-color: var(--background_box);
+    width: 100%;
+    display: flex; justify-content: center; align-items: center;
+}
+.moving_background a{
+    text-decoration: none;
+    color: #000 ;
+    font-size: 2rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    background: linear-gradient(white , white);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    background-position-x: right;
+
+    transition: background-size 500ms;
+}
+.moving_background a:hover{
+    background-size: 100% 100%;
+    background-position-x: left;
+}
+html{
+    scroll-behavior: smooth;
+}
